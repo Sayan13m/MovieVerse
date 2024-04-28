@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="interstellar.css" />
+    <title>MOVIEVERSE-Interstellar</title>
+  </head>
+  <body>
+    <video autoplay loop id="video-background">
+      <source src="interstellar.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="navbar">
+      <ul>
+        <a href="/index.html"
+          ><li>MOVIE <span class="verse"> VERSE</span></li></a
+        >
+        <a href="/choose.html"><li>Choose Another Movie</li></a>
+      </ul>
+    </div>
+    <div id="video-content">
+      <div class="main">
+        <h1>INTERSTELLAR</h1>
+        <div class="left">
+          <p class="info">
+            Interstellar is a science fiction film directed by Christopher
+            Nolan, released in 2014. The movie stars Matthew McConaughey, Anne
+            Hathaway, Jessica Chastain, and Michael Caine, among others.
+          </p>
+          <button id="pl"><a href="https://www.youtube.com/watch?v=zSWdZVtXT7E">Play Now</a></button>
+          <button id="toggleMuteButton">Mute/Unmute</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const video = document.getElementById("video-background");
+        const toggleMuteButton = document.getElementById("toggleMuteButton");
+
+        toggleMuteButton.addEventListener("click", function () {
+          video.muted = !video.muted;
+          if (video.muted) {
+            toggleMuteButton.textContent = "Unmute";
+          } else {
+            toggleMuteButton.textContent = "Mute";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

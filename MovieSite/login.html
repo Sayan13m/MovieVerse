@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movie Website Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-image: url(./back.jpg);
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .error-message {
+        color: red;
+        margin-top: 10px;
+      }
+
+      .extra-options {
+        margin-top: 15px;
+        text-align: center;
+      }
+
+      .extra-options a {
+        text-decoration: none;
+        color: #007bff;
+      }
+
+      .extra-options a:hover {
+        text-decoration: underline;
+      }
+      .submit a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Login to Movie Website</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username or Email:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div class="form-group">
+          <input type="checkbox" id="rememberMe" />
+          <label for="rememberMe">Remember Me</label>
+        </div>
+        <button type="submit" class="submit">
+          <a href="/choose.html">LOGIN</a>
+        </button>
+        <div id="errorMessage" class="error-message"></div>
+      </form>
+      <div class="extra-options">
+        <a href="/index.html">Go Back</a>
+        <span> | </span>
+        <a href="/signup.html">Register</a>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+    
+          var username = document.getElementById("username").value;
+          var password = document.getElementById("password").value;
+          var rememberMe = document.getElementById("rememberMe").checked;
+    
+          // Prepare data to send to the backend
+          var formData = {
+            email: username,
+            password: password
+          };
+    
+          // Send POST request to the backend login route
+          fetch('http://localhost:1234/users/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Login failed');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Handle successful login
+            console.log(data);
+            alert("Login successful!");
+            // Redirect to choose.html or perform any other action after successful login
+            window.location.href = '/choose.html';
+          })
+          .catch(error => {
+            // Handle errors
+            console.error('Error:', error);
+            document.getElementById("errorMessage").innerText =
+                  "Invalid username or password.";
+          });
+        });
+    </script>
+    
+  </body>
+</html>
+

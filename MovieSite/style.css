@@ -1,0 +1,61 @@
+.verse {
+  color: rgb(71, 212, 255);
+  font-size: 7rem;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  letter-spacing: 1rem;
+}
+.header {
+  margin-top: 0rem;
+  display: flex;
+  justify-content: center;
+}
+.movie {
+  font-size: 7.9rem;
+  color: white;
+  letter-spacing: 1rem;
+  font-family: "Anton", sans-serif;
+}
+.button {
+  margin-top: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.select a {
+  text-decoration: none;
+  color: black;
+  border-style: 1px solid rgb(71, 212, 255);
+}
+
+.select {
+  background-color: white;
+  width: 7rem;
+  height: 2rem;
+  border-radius: 1.5rem;
+  border-style: 1px solid rgb(71, 212, 255);
+}
+.select:hover {
+  transition: 0.9s ease-in-out;
+  background-color: rgb(71, 212, 255);
+}
+.sub {
+  text-align: center;
+}
+.sub p {
+  color: white;
+  margin-top: -2rem;
+  font-size: 1.5rem;
+}
+.subverse {
+  color: rgb(71, 212, 255);
+}
+body {
+  background-image: url(./back.jpg);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.but1 {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

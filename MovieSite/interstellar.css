@@ -1,0 +1,98 @@
+.navbar ul {
+  text-decoration: none;
+  display: flex;
+}
+.navbar ul a {
+  list-style: none;
+  color: white;
+  text-decoration: none;
+  margin-right: 3rem;
+}
+body {
+  height: 100vh;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#video-background {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  background-size: cover;
+}
+
+#video-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-size: 2rem;
+  padding: 20px;
+}
+.mute-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+  background-color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fa-volume-up,
+.fa-volume-off {
+  font-size: 20px;
+}
+.main h1 {
+  font-size: 7rem;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1rem;
+}
+.verse {
+  color: rgb(71, 212, 255);
+}
+
+.left {
+  width: 50%;
+}
+.info {
+  margin-top: -2rem;
+  font-size: 1.7rem;
+  text-align: center;
+}
+.main {
+  margin-left: 2rem;
+}
+.left button {
+  margin-left: 20rem;
+  background-color: transparent;
+  color: white;
+  width: 7rem;
+  height: 2rem;
+  border-radius: 1.5rem;
+  border-style: 1px solid white;
+}
+#toggleMuteButton,
+#pl {
+  cursor: pointer;
+  background-color: rgb(71, 212, 255);
+  color: white;
+}
+#pl a {
+  text-decoration: none;
+  color: white;
+}
